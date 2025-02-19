@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-function Tag ({ value }) {
+function Tag ({ value, onChange }) {
   const [isActive, setIsActive] = useState(true)
 
   const handlePress = () => {
     setIsActive(!isActive)
+    onChange(value, !isActive)
   }
 
   return (
